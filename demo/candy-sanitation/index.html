@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Candy Sanitation — Septic service in Tyler, TX (sample rebuild)</title>
+<meta name="description" content="Sample one-page rebuild for Candy Sanitation: septic pumping, repairs, and inspections in Tyler, Texas.">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="Candy Sanitation — sample rebuild">
+<meta property="og:description" content="A sample one-page site for septic service in Tyler, Texas.">
+<meta property="og:type" content="website">
+<style>
+  @font-face {
+    font-family: "Fraunces";
+    src: url("../../fonts/fraunces-latin.woff2") format("woff2");
+    font-weight: 400 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("../../fonts/inter-latin.woff2") format("woff2");
+    font-weight: 400 700;
+    font-display: swap;
+  }
+
+  :root {
+    --paper: #eef1e9;
+    --paper-2: #e4e9dc;
+    --ink: #101c17;
+    --muted: #55665c;
+    --pine: #123c31;
+    --line: #c3cdc0;
+    --clay: #b8552a;
+    --pad: clamp(1.25rem, 5vw, 5.5rem);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 1.0625rem/1.6 "Inter", system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--pine); color: var(--paper); }
+  a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-color: var(--clay); }
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+  h1, h2, h3 {
+    margin: 0;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 400;
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+    letter-spacing: -.03em;
+    line-height: .98;
+    text-wrap: balance;
+  }
+  p { margin: 0; text-wrap: pretty; }
+  p + p { margin-top: .9em; }
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+
+  .notice {
+    background: var(--pine);
+    color: var(--paper);
+    font-size: .75rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: .65rem var(--pad);
+    display: flex;
+    gap: .75rem 1.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .notice a { color: var(--paper); }
+
+  .shell { width: min(100% - 2 * var(--pad), 76rem); margin-inline: auto; }
+
+  header.site {
+    border-bottom: 1px solid var(--line);
+    padding: 1.25rem 0;
+  }
+  header.site .shell {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .mark {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.15rem;
+    letter-spacing: -.02em;
+  }
+  .mark span { color: var(--clay); }
+  header.site nav { display: flex; gap: 1.25rem; font-size: .9rem; }
+  header.site nav a { text-decoration: none; }
+  header.site nav a:hover { text-decoration: underline; }
+
+  .hero {
+    display: grid;
+    gap: clamp(2rem, 6vw, 5rem);
+    padding: clamp(2.5rem, 8vw, 7rem) 0 clamp(3rem, 7vw, 6rem);
+    align-items: end;
+  }
+  @media (min-width: 54rem) {
+    .hero { grid-template-columns: minmax(0, 1.35fr) minmax(17rem, .65fr); }
+  }
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    color: var(--muted);
+    font-size: .78rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 2rem;
+    height: 1px;
+    background: var(--clay);
+  }
+  h1 { font-size: clamp(3.4rem, 9.5vw, 8.5rem); max-width: 9ch; }
+  h1 em { font-style: italic; color: var(--pine); }
+  .lede {
+    margin-top: 1.75rem;
+    max-width: 34ch;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    color: var(--muted);
+  }
+
+  .call-card {
+    background: var(--pine);
+    color: var(--paper);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    display: grid;
+    gap: 1.25rem;
+    align-content: start;
+    min-height: 100%;
+  }
+  .call-card .label {
+    font-size: .72rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #b9cbbf;
+  }
+  .phone {
+    display: block;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.9rem, 3.8vw, 2.9rem);
+    line-height: 1;
+    letter-spacing: -.03em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .phone:hover { color: #f0c9a8; }
+  .call-card p { color: #d8e3da; font-size: .98rem; }
+  .call-card .note {
+    border-top: 1px solid rgba(238, 241, 233, .25);
+    padding-top: 1rem;
+    font-size: .82rem;
+    color: #b9cbbf;
+  }
+
+  .strip {
+    background: var(--paper-2);
+    border-block: 1px solid var(--line);
+  }
+  .strip .shell {
+    display: grid;
+    gap: 0;
+  }
+  @media (min-width: 44rem) {
+    .strip .shell { grid-template-columns: repeat(3, 1fr); }
+  }
+  .strip .item {
+    padding: 1.4rem 0;
+    display: flex;
+    gap: .8rem;
+    align-items: baseline;
+    border-top: 1px solid var(--line);
+  }
+  .strip .item:first-child { border-top: 0; }
+  @media (min-width: 44rem) {
+    .strip .item { border-top: 0; border-left: 1px solid var(--line); padding: 1.4rem 1.5rem; }
+    .strip .item:first-child { border-left: 0; padding-left: 0; }
+  }
+  .strip .item b { font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 1.05rem; }
+  .strip .item span { color: var(--muted); font-size: .88rem; }
+
+  section.services { padding: clamp(3.5rem, 8vw, 7rem) 0; }
+  .section-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+  .section-head h2 { font-size: clamp(2.2rem, 5vw, 4rem); }
+  .section-head p { color: var(--muted); max-width: 30ch; font-size: .95rem; }
+
+  .cards {
+    display: grid;
+    gap: 1px;
+    background: var(--line);
+    border-block: 1px solid var(--line);
+  }
+  @media (min-width: 48rem) { .cards { grid-template-columns: repeat(3, 1fr); } }
+  .card {
+    background: var(--paper);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+    min-height: 15rem;
+  }
+  .card .idx {
+    font-size: .72rem;
+    letter-spacing: .14em;
+    color: var(--clay);
+    text-transform: uppercase;
+  }
+  .card h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
+  .card p { color: var(--muted); font-size: .95rem; }
+
+  section.area {
+    background: var(--pine);
+    color: var(--paper);
+    padding: clamp(3.5rem, 8vw, 7rem) 0;
+  }
+  .area-grid { display: grid; gap: clamp(2rem, 5vw, 4rem); }
+  @media (min-width: 50rem) { .area-grid { grid-template-columns: 1.1fr .9fr; align-items: end; } }
+  section.area h2 { font-size: clamp(2.4rem, 5.5vw, 4.5rem); }
+  section.area h2 em { font-style: italic; color: #e9b68f; }
+  section.area p { color: #cfded3; max-width: 38ch; }
+  .area-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid rgba(238, 241, 233, .25);
+  }
+  .area-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .85rem 0;
+    border-bottom: 1px solid rgba(238, 241, 233, .25);
+    font-size: .95rem;
+  }
+  .area-list span:last-child { color: #b9cbbf; text-align: right; }
+
+  section.closing { padding: clamp(3.5rem, 8vw, 7rem) 0; }
+  .closing-inner {
+    display: grid;
+    gap: 2rem;
+    align-items: end;
+  }
+  @media (min-width: 48rem) { .closing-inner { grid-template-columns: 1fr auto; } }
+  .closing h2 { font-size: clamp(2.4rem, 6vw, 5rem); max-width: 14ch; }
+  .closing p { margin-top: 1rem; color: var(--muted); max-width: 36ch; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.25rem;
+    padding: .9rem 1.5rem;
+    background: var(--clay);
+    color: #fff8f1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .95rem;
+    letter-spacing: .01em;
+    border: 1px solid var(--clay);
+  }
+  .button:hover { background: var(--pine); border-color: var(--pine); }
+
+  footer.site {
+    border-top: 1px solid var(--line);
+    padding: 1.5rem 0 2.5rem;
+    font-size: .78rem;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+  footer.site .shell { display: grid; gap: .5rem; }
+  footer.site a { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="notice">
+  <span>Sample rebuild · not affiliated with Candy Sanitation</span>
+  <a href="https://anojndr.github.io/page-rebuild/">Built by Jandron Gian E. Ramos</a>
+</div>
+
+<header class="site">
+  <div class="shell">
+    <div class="mark">Candy<span>.</span> Sanitation</div>
+    <nav aria-label="Page">
+      <a href="#services">Services</a>
+      <a href="#area">Service area</a>
+      <a href="tel:+19035970733">Call</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="shell">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Septic service · Tyler, Texas</p>
+        <h1>Keep the <em>yard</em> working.</h1>
+        <p class="lede">Septic pumping, repairs, and inspections for homes and properties around Tyler. One call, a straight answer, and a truck that shows up.</p>
+      </div>
+      <aside class="call-card" aria-label="Contact">
+        <p class="label">Call for service</p>
+        <a class="phone num" href="tel:+19035970733">(903) 597-0733</a>
+        <p>Tell us what the tank is doing. We will tell you what it needs.</p>
+        <p class="note">Serving Tyler and surrounding East Texas communities.</p>
+      </aside>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="shell">
+      <div class="item"><b>Pumping</b> <span>Routine and emergency calls</span></div>
+      <div class="item"><b>Repairs</b> <span>Tanks, lines, and components</span></div>
+      <div class="item"><b>Inspections</b> <span>Before you buy or sell</span></div>
+    </div>
+  </div>
+
+  <section class="services" id="services">
+    <div class="shell">
+      <div class="section-head">
+        <h2>What we do</h2>
+        <p>Three jobs, done properly. No upsell script, no guessing at the gate.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <p class="idx">01 / Pumping</p>
+          <h3>Empty the tank before it backs up.</h3>
+          <p>Routine pumping for homes and small properties, plus call-outs when the level is already too high.</p>
+        </article>
+        <article class="card">
+          <p class="idx">02 / Repairs</p>
+          <h3>Fix the cause, not the puddle.</h3>
+          <p>We trace the problem through the tank, inlet, outlet, and drain field before quoting the repair.</p>
+        </article>
+        <article class="card">
+          <p class="idx">03 / Inspections</p>
+          <h3>Know what you are buying.</h3>
+          <p>A clear read on the system before a property changes hands, with the findings written down.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="area" id="area">
+    <div class="shell area-grid">
+      <div>
+        <p class="eyebrow" style="color:#b9cbbf">Where we work</p>
+        <h2>Tyler, and the roads <em>around it.</em></h2>
+        <p>If you are outside the city, call with the address. We will tell you the soonest we can get there.</p>
+      </div>
+      <ul class="area-list">
+        <li><span>Tyler</span><span>Same-week service</span></li>
+        <li><span>Whitehouse</span><span>By appointment</span></li>
+        <li><span>Bullard</span><span>By appointment</span></li>
+        <li><span>Lindale</span><span>By appointment</span></li>
+        <li><span>Surrounding counties</span><span>Call to confirm</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="shell closing-inner">
+      <div>
+        <h2>Tell us what the tank is doing.</h2>
+        <p>One phone call. We will ask a few questions, give you a window, and bring the right truck.</p>
+      </div>
+      <a class="button" href="tel:+19035970733">Call (903) 597-0733</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="shell">
+    <p><strong>Unofficial sample.</strong> This page was built by <a href="https://anojndr.github.io/page-rebuild/">Jandron Gian E. Ramos</a> as a demonstration for Candy Sanitation. It is not affiliated with, endorsed by, or operated by Candy Sanitation. Business name and public phone number only; no original site content or images are used.</p>
+    <p>Public contact information, checked 22 October 2026. If you want this page removed, email <a href="mailto:rjandrongian@gmail.com">rjandrongian@gmail.com</a> and it will be taken down.</p>
+  </div>
+</footer>
+</body>
+</html>

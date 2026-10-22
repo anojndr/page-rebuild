@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>URL received — site inspection</title>
+<style>
+  @font-face {
+    font-family: "Fraunces";
+    src: url("fonts/fraunces-latin.woff2") format("woff2");
+    font-weight: 400 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("fonts/inter-latin.woff2") format("woff2");
+    font-weight: 400 700;
+    font-display: swap;
+  }
+  :root {
+    --paper: #f1ece1;
+    --ink: #16130e;
+    --muted: #655c4e;
+    --rule: #d3c8b6;
+    --signal: #a63218;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: clamp(1.25rem, 5vw, 4rem);
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 1.0625rem/1.62 "Inter", system-ui, sans-serif;
+  }
+  .sheet {
+    width: min(38rem, 100%);
+    border-top: 1px solid var(--ink);
+    padding-top: clamp(2rem, 6vw, 3.5rem);
+  }
+  .stamp {
+    margin: 0 0 1.25rem;
+    font-size: .75rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  h1 {
+    margin: 0;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 7vw, 3.8rem);
+    line-height: .98;
+    letter-spacing: -.03em;
+    text-wrap: balance;
+  }
+  h1 em { font-style: italic; color: var(--signal); }
+  p { margin: 1.25rem 0 0; max-width: 42ch; text-wrap: pretty; }
+  .next { color: var(--muted); font-size: .9375rem; }
+  a {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--ink);
+    text-decoration-thickness: 1px;
+    text-underline-offset: .22em;
+  }
+  a:hover { text-decoration-color: var(--signal); }
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+</style>
+</head>
+<body>
+  <main class="sheet">
+    <p class="stamp">Site inspection · URL received</p>
+    <h1>The URL is in. <em>Now I measure it.</em></h1>
+    <p>
+      You will get the readout at the address you entered: what is broken, what it
+      costs you, which of the two prices applies, and nothing else.
+    </p>
+    <p class="next">Within one working day. If the page is fine, the reply says so.</p>
+    <a href="/">Back to the inspection page</a>
+  </main>
+</body>
+</html>
